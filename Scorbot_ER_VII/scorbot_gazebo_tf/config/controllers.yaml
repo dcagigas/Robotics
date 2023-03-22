@@ -1,0 +1,73 @@
+# Publish all joint states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# If you do not specify the gains: the command is applied exactly, and therefore the dynamics will not be taken into account.
+# If you do specify gains: when you set a position (velocity) command, for each motor an effort is computed via the PID.
+# Here you have a more realistic simulation that takes into account robot's dynamics.
+# Here no pID is taken into control because PID values are not known.
+
+#/scorbot/gazebo_ros_control:
+#  pid_gains:
+#      base:
+#          p: 50.0
+#          i: 1.0
+#          d: 20.0
+#      shoulder:
+#          p: 500.0
+#          i: 10.0
+#          d: 1.0
+#      elbow: 
+#          p: 500.0
+#          i: 10.0
+#          d: 1.0
+#      pitch: 
+#          p: 100.0
+#          i: 10.0
+#          d: 1.0
+#      roll: 
+#          p: 50.0
+#          i: 1.0
+#          d: 10.0
+
+# Joints controllers, each joint with individual command
+base_position_controller:
+  type: position_controllers/JointPositionController
+  joint: base
+
+shoulder_position_controller:
+  type: position_controllers/JointPositionController
+  joint: shoulder
+ 
+elbow_position_controller:
+  type: position_controllers/JointPositionController
+  joint: elbow
+
+pitch_position_controller:
+  type: position_controllers/JointPositionController
+  joint: pitch
+
+roll_position_controller:
+  type: position_controllers/JointPositionController
+  joint: roll
+
+gripper_left_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_finger_left_joint
+
+gripper_right_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_finger_right_joint
+
+
+# Joint trajectory controller, all joints controller
+trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - base
+    - shoulder
+    - elbow
+    - pitch
+    - roll
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Arguments -->
+  <arg name="use_gui" default="true"/>
+  <param name="use_gui" value="$(arg use_gui)" />
+  <!-- Controller type -->
+  <arg name="trajectory_controller" default="false"/>
+  <!-- Publish /clock -->
+  <arg name="use_sim_time" value="true"/>
+  <!-- Fix base to World, publish TF for /world frame -->
+  <arg name="fixed" default="true"/>
+ 
+  <!-- Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg use_gui)"/>
+    <arg name="verbose" value="true"/>
+  </include>
+
+
+
+
+  <group ns="scorbot">
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <include file="$(find scorbot_gazebo_tf)/launch/load_robot_description.launch">
+      <arg name="fixed" value="true"/>
+    </include>
+    <!-- Add URDF in Gazebo  -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model Scorbot_ER-VII -param /scorbot/robot_description"/>
+
+    <!-- TF from joint states -->
+   <!-- Load the urdf into the parameter server. -->
+   <!-- <param name="robot_description" textfile="$(find scorbot_gazebo_tf)/urdf/scorbot.urdf"/> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> 
+    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+    <!--     <remap from="/robot_description" to="/scorbot/robot_description" />
+        <remap from="/joint_states" to="/scorbot/joint_states" />
+        <param name="tf_prefix" value="/scorbot" />
+    </node> -->
+
+
+    <!-- Controllers-->
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find scorbot_gazebo_tf)/config/controllers.yaml" command="load"/>
+    <!-- Use individual controllers -->
+    <node unless="$(arg trajectory_controller)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="joint_state_controller
+        base_position_controller
+        shoulder_position_controller
+        elbow_position_controller
+        pitch_position_controller
+        roll_position_controller
+        gripper_left_controller
+        gripper_right_controller
+        --shutdown-timeout 2"/>
+    <!-- Use trajectory controllers -->
+    <node if="$(arg trajectory_controller)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="joint_state_controller
+        trajectory_controller
+        --shutdown-timeout 2"/>
+  </group>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find scorbot_gazebo_tf)/launch/scorbot_gazebo_tf.rviz"/>
+
+</launch>
