@@ -1,0 +1,158 @@
+Notas: mae (mean_absolute_error), max_trials=100, seed=42, val_loss=0.8105676174163818)
+
+TURNER_SELECTED: bayesian
+Layers:
+-------
+[INFO] optimal number of filters in num_of_neurons_base1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_base2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_shoulder1 layer: 128
+[INFO] optimal number of filters in num_of_neurons_shoulder2 layer: 16
+[INFO] optimal number of filters in num_of_neurons_elbow1 layer: 48
+[INFO] optimal number of filters in num_of_neurons_elbow2 layer: 96
+[INFO] optimal number of filters in num_of_neurons_pitch1 layer: 96
+[INFO] optimal number of filters in num_of_neurons_pitch2 layer: 48
+Learning rate:
+--------------
+[INFO] optimal learning rate: 0.0100
+Activation function:
+-------
+[INFO] optimal dense_activation_base1: relu
+[INFO] optimal dense_activation_base2: relu
+[INFO] optimal dense_activation_shoulder1: relu
+[INFO] optimal dense_activation_shoulder2: relu
+[INFO] optimal dense_activation_elbow1: relu
+[INFO] optimal dense_activation_elbow2: relu
+[INFO] optimal dense_activation_pitch1: relu
+[INFO] optimal dense_activation_pitch2: relu
+Results summary
+Results in tune_models/bayesian
+Showing 10 best trials
+Objective(name='val_loss', direction='min')
+Trial summary
+Hyperparameters:
+dense_activation_base1: relu
+dense_activation_base2: relu
+dense_activation_shoulder1: relu
+dense_activation_shoulder2: relu
+dense_activation_elbow1: relu
+dense_activation_elbow2: relu
+dense_activation_pitch1: relu
+dense_activation_pitch2: relu
+num_of_neurons_base1: 16
+num_of_neurons_base2: 128
+num_of_neurons_shoulder1: 128
+num_of_neurons_shoulder2: 16
+num_of_neurons_elbow1: 48
+num_of_neurons_elbow2: 96
+num_of_neurons_pitch1: 96
+num_of_neurons_pitch2: 48
+learning_rate: 0.01
+Score: 0.8105676174163818
+
+#################################
+
+Notas: mse (mean_squared_error), max_trials=100, seed=42, val_loss=0.3534836769104004
+
+
+TURNER_SELECTED: bayesian
+Layers:
+-------
+[INFO] optimal number of filters in num_of_neurons_base1 layer: 128
+[INFO] optimal number of filters in num_of_neurons_base2 layer: 96
+[INFO] optimal number of filters in num_of_neurons_shoulder1 layer: 80
+[INFO] optimal number of filters in num_of_neurons_shoulder2 layer: 96
+[INFO] optimal number of filters in num_of_neurons_elbow1 layer: 128
+[INFO] optimal number of filters in num_of_neurons_elbow2 layer: 16
+[INFO] optimal number of filters in num_of_neurons_pitch1 layer: 80
+[INFO] optimal number of filters in num_of_neurons_pitch2 layer: 128
+Learning rate:
+--------------
+[INFO] optimal learning rate: 0.0100
+Activation function:
+-------
+[INFO] optimal dense_activation_base1: relu
+[INFO] optimal dense_activation_base2: relu
+[INFO] optimal dense_activation_shoulder1: relu
+[INFO] optimal dense_activation_shoulder2: softmax
+[INFO] optimal dense_activation_elbow1: relu
+[INFO] optimal dense_activation_elbow2: softmax
+[INFO] optimal dense_activation_pitch1: relu
+[INFO] optimal dense_activation_pitch2: relu
+Results summary
+Results in tune_models/bayesian
+Showing 10 best trials
+Objective(name='val_loss', direction='min')
+Trial summary
+Hyperparameters:
+dense_activation_base1: relu
+dense_activation_base2: relu
+dense_activation_shoulder1: relu
+dense_activation_shoulder2: softmax
+dense_activation_elbow1: relu
+dense_activation_elbow2: softmax
+dense_activation_pitch1: relu
+dense_activation_pitch2: relu
+num_of_neurons_base1: 128
+num_of_neurons_base2: 96
+num_of_neurons_shoulder1: 80
+num_of_neurons_shoulder2: 96
+num_of_neurons_elbow1: 128
+num_of_neurons_elbow2: 16
+num_of_neurons_pitch1: 80
+num_of_neurons_pitch2: 128
+learning_rate: 0.01
+Score: 0.3534836769104004
+
+#################################
+
+Notas: mse (mean_squared_logarithmic_error), max_trials=100, seed=42, val_loss=0.07462023198604584
+
+TURNER_SELECTED: bayesian
+Layers:
+-------
+[INFO] optimal number of filters in num_of_neurons_base1 layer: 128
+[INFO] optimal number of filters in num_of_neurons_base2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_shoulder1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_shoulder2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_elbow1 layer: 128
+[INFO] optimal number of filters in num_of_neurons_elbow2 layer: 16
+[INFO] optimal number of filters in num_of_neurons_pitch1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_pitch2 layer: 16
+Learning rate:
+--------------
+[INFO] optimal learning rate: 0.0094
+Activation function:
+-------
+[INFO] optimal dense_activation_base1: relu
+[INFO] optimal dense_activation_base2: relu
+[INFO] optimal dense_activation_shoulder1: relu
+[INFO] optimal dense_activation_shoulder2: relu
+[INFO] optimal dense_activation_elbow1: relu
+[INFO] optimal dense_activation_elbow2: softmax
+[INFO] optimal dense_activation_pitch1: softmax
+[INFO] optimal dense_activation_pitch2: relu
+Results summary
+Results in tune_models/bayesian
+Showing 10 best trials
+Objective(name='val_loss', direction='min')
+Trial summary
+Hyperparameters:
+dense_activation_base1: relu
+dense_activation_base2: relu
+dense_activation_shoulder1: relu
+dense_activation_shoulder2: relu
+dense_activation_elbow1: relu
+dense_activation_elbow2: softmax
+dense_activation_pitch1: softmax
+dense_activation_pitch2: relu
+num_of_neurons_base1: 128
+num_of_neurons_base2: 128
+num_of_neurons_shoulder1: 16
+num_of_neurons_shoulder2: 128
+num_of_neurons_elbow1: 128
+num_of_neurons_elbow2: 16
+num_of_neurons_pitch1: 16
+num_of_neurons_pitch2: 16
+learning_rate: 0.009436549380955214
+Score: 0.07462023198604584
+

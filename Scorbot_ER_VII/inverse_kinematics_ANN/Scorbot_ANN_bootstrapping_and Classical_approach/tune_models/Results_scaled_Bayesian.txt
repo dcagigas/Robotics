@@ -1,0 +1,60 @@
+ValueError: Objective value missing in metrics reported to the Oracle, expected: ['mean_squared_error'], found: dict_keys(['loss', 'q1_loss', 'q2_loss', 'q3_loss', 'q4_loss', 'q1_mse', 'q2_mse', 'q3_mse', 'q4_mse', 'val_loss', 'val_q1_loss', 'val_q2_loss', 'val_q3_loss', 'val_q4_loss', 'val_q1_mse', 'val_q2_mse', 'val_q3_mse', 'val_q4_mse'])
+
+Notas: mse (mean_squarred_error), max_trials=10, seed=42, val_loss=0.42)
+BAYESIAN:
+
+Layers:
+-------
+[INFO] optimal number of filters in num_of_neurons_base1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_base2 layer: 96
+[INFO] optimal number of filters in num_of_neurons_shoulder1 layer: 64
+[INFO] optimal number of filters in num_of_neurons_shoulder2 layer: 64
+[INFO] optimal number of filters in num_of_neurons_elbow1 layer: 112
+[INFO] optimal number of filters in num_of_neurons_elbow2 layer: 16
+[INFO] optimal number of filters in num_of_neurons_pitch1 layer: 112
+[INFO] optimal number of filters in num_of_neurons_pitch2 layer: 96
+Learning rate:
+--------------
+[INFO] optimal learning rate: 0.0100
+Activation function:
+-------
+[INFO] optimal dense_activation_base1: relu
+[INFO] optimal dense_activation_base2: relu
+[INFO] optimal dense_activation_shoulder1: sigmoid
+[INFO] optimal dense_activation_shoulder2: sigmoid
+[INFO] optimal dense_activation_elbow1: tanh
+[INFO] optimal dense_activation_elbow2: sigmoid
+[INFO] optimal dense_activation_pitch1: relu
+[INFO] optimal dense_activation_pitch2: relu
+
+##################
+
+Notas: mse (mean_absolute_error), max_trials=50, seed=42, val_loss=0.8235267996788025)
+
+TURNER_SELECTED: bayesian
+
+
+Layers:
+-------
+[INFO] optimal number of filters in num_of_neurons_base1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_base2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_shoulder1 layer: 16
+[INFO] optimal number of filters in num_of_neurons_shoulder2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_elbow1 layer: 64
+[INFO] optimal number of filters in num_of_neurons_elbow2 layer: 128
+[INFO] optimal number of filters in num_of_neurons_pitch1 layer: 96
+[INFO] optimal number of filters in num_of_neurons_pitch2 layer: 16
+Learning rate:
+--------------
+[INFO] optimal learning rate: 0.0100
+Activation function:
+-------
+[INFO] optimal dense_activation_base1: relu
+[INFO] optimal dense_activation_base2: relu
+[INFO] optimal dense_activation_shoulder1: relu
+[INFO] optimal dense_activation_shoulder2: relu
+[INFO] optimal dense_activation_elbow1: relu
+[INFO] optimal dense_activation_elbow2: relu
+[INFO] optimal dense_activation_pitch1: relu
+[INFO] optimal dense_activation_pitch2: relu
+
