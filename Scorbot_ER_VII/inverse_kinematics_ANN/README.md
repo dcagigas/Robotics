@@ -10,4 +10,4 @@ This directory/folder contains the Python scripts that predict the inverse kinem
 
 The MLP-ANNs (models) and data training/test sets are also included. They can be generated again if necessary. Using this data, plots and results can be obtained in a short execution period of time. However, some processes like the error vector generation (minimum error produced of the ensemble of ANNs for every data test point) can take some time if this was not previous calculated. This data is again included to run and obtain fast the plots/results.
 
-The four methods have very similar Python scripts. The general structure and contents of these Python scripts are described in file: SCRIPTS_DESCRIPTION.pdf. Please, read this information before start working.
+The four methods have very similar Python scripts. The general structure and contents of these Python scripts are described in file: **SCRIPTS_DESCRIPTION.pdf**. Please, read this information before start working.
